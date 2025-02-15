@@ -1,16 +1,20 @@
+import * as React from 'react';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Container from './components/Container/Container';
 
-import './App.css'
 
-function App() {
-  
-
-  return (
-    <>
-       <h1 className="text-3xl font-bold underline">
-        Hello world!
-        </h1>
-    </>
-  )
+interface IAppProps {
 }
 
-export default App
+const App: React.FunctionComponent<IAppProps> = () => {
+  return(
+    <>
+      <Header></Header>
+      <Container></Container>
+      <Footer></Footer>
+    </>
+  ) ;
+};
+
+export default App;
