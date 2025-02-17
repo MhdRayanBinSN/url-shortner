@@ -6,10 +6,11 @@ import axios from 'axios';
 
 interface IDataTableProps {
     data: UrlData[];
+    updateReloadState:()=>void
 }
 
 const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
-    const { data } = props;
+    const { data,updateReloadState } = props;
     console.log("data in dataTable: ", data);
     const copyToClipBoard = async (url: string) => {
         try {
@@ -29,6 +30,7 @@ const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
             console.log(error);
             
         }
+        updateReloadState();
     }
     const renderTableData = () => {
         return data.map((item) => {
@@ -46,7 +48,7 @@ const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
                             {item.shortUrl}
                         </Link>
                     </td>
-                    <td className='px-6 py-3'>{item.clicks}</td>
+                    <td className='px-6 py-3'>{item.click}</td>
                     <td className='px-6 py-3'>
                         <div className="flex items-center space-x-4">
 

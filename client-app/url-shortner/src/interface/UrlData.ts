@@ -1,8 +1,9 @@
 export interface UrlData{
+    //click: React.ReactNode;
     _id:String;
     fullUrl:String;
     shortUrl:String;
-    clicks:number;
+    click:number;
     createdAt:Date;
     updatedAt:Date;
 }
